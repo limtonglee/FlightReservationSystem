@@ -19,7 +19,7 @@ import javax.persistence.OneToMany;
  * @author limtonglee
  */
 @Entity
-public class AircraftTypeEntity implements Serializable {
+public class AircraftType implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -35,11 +35,11 @@ public class AircraftTypeEntity implements Serializable {
     //@OneToMany
     //private List<AircraftConfigurationEntity> aircraftConfigs;  
 
-    public AircraftTypeEntity() {
+    public AircraftType() {
         //aircraftConfigs = new ArrayList<>();
     }
 
-    public AircraftTypeEntity(String aircraftTypeName, Long maxSeatCapacity, String description) {
+    public AircraftType(String aircraftTypeName, Long maxSeatCapacity, String description) {
         
         this();
         
@@ -68,10 +68,10 @@ public class AircraftTypeEntity implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the aircraftTypeId fields are not set
-        if (!(object instanceof AircraftTypeEntity)) {
+        if (!(object instanceof AircraftType)) {
             return false;
         }
-        AircraftTypeEntity other = (AircraftTypeEntity) object;
+        AircraftType other = (AircraftType) object;
         if ((this.aircraftTypeId == null && other.aircraftTypeId != null) || (this.aircraftTypeId != null && !this.aircraftTypeId.equals(other.aircraftTypeId))) {
             return false;
         }

@@ -20,7 +20,7 @@ import javax.persistence.OneToOne;
  * @author limtonglee
  */
 @Entity
-public class FlightRouteEntity implements Serializable {
+public class FlightRoute implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -33,28 +33,28 @@ public class FlightRouteEntity implements Serializable {
     
     
     //@OneToOne(fetch = FetchType.LAZY)
-    //private FlightRouteEntity destination;
+    //private FlightRoute destination;
     @OneToOne
-    private FlightRouteEntity complementaryRoute;
+    private FlightRoute complementaryRoute;
 
     //@OneToMany
     //private List<FlightEntity> flightEntities;
        
     @ManyToOne(optional = false)
     @JoinColumn(nullable = false)
-    private AirportEntity originAirport;
+    private Airport originAirport;
     
     
     @ManyToOne(optional = false)
     @JoinColumn(nullable = false)
-    private AirportEntity destAirport;
+    private Airport destAirport;
     
 
-    public FlightRouteEntity() {
+    public FlightRoute() {
        //flightEntities = new ArrayList<>(); 
     }
 
-    public FlightRouteEntity(String origin, String dest, AirportEntity originAirport, AirportEntity destAirport) {
+    public FlightRoute(String origin, String dest, Airport originAirport, Airport destAirport) {
         
         this();
         
@@ -87,10 +87,10 @@ public class FlightRouteEntity implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the flightRouteId fields are not set
-        if (!(object instanceof FlightRouteEntity)) {
+        if (!(object instanceof FlightRoute)) {
             return false;
         }
-        FlightRouteEntity other = (FlightRouteEntity) object;
+        FlightRoute other = (FlightRoute) object;
         if ((this.flightRouteId == null && other.flightRouteId != null) || (this.flightRouteId != null && !this.flightRouteId.equals(other.flightRouteId))) {
             return false;
         }

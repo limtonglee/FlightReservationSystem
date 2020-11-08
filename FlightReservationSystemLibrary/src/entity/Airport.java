@@ -20,7 +20,7 @@ import javax.persistence.OneToMany;
  * @author limtonglee
  */
 @Entity
-public class AirportEntity implements Serializable {
+public class Airport implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -37,17 +37,17 @@ public class AirportEntity implements Serializable {
     
     
     @OneToMany(mappedBy = "originAirport")
-    private List<FlightRouteEntity> originFlights;
+    private List<FlightRoute> originFlights;
 
     @OneToMany(mappedBy = "destAirport")
-    private List<FlightRouteEntity> destFlights;
+    private List<FlightRoute> destFlights;
 
-    public AirportEntity() {
+    public Airport() {
         originFlights = new ArrayList<>();
         destFlights = new ArrayList<>();
     }
 
-    public AirportEntity(String iataCode, String airportName, String city, String stateOrProvince, String country) {
+    public Airport(String iataCode, String airportName, String city, String stateOrProvince, String country) {
         
         this();
         
@@ -78,10 +78,10 @@ public class AirportEntity implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the airportId fields are not set
-        if (!(object instanceof AirportEntity)) {
+        if (!(object instanceof Airport)) {
             return false;
         }
-        AirportEntity other = (AirportEntity) object;
+        Airport other = (Airport) object;
         if ((this.airportId == null && other.airportId != null) || (this.airportId != null && !this.airportId.equals(other.airportId))) {
             return false;
         }
