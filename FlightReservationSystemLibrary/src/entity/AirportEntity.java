@@ -35,6 +35,7 @@ public class AirportEntity implements Serializable {
     @Column(nullable = false)
     private String country; //Singapore
     
+    
     @OneToMany(mappedBy = "originAirport")
     private List<FlightRouteEntity> originFlights;
 

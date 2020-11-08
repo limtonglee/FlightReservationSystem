@@ -31,6 +31,7 @@ public class AircraftTypeEntity implements Serializable {
     private Long maxSeatCapacity; //300
     private String description; //wide body, long range
     
+    
     //@OneToMany
     //private List<AircraftConfigurationEntity> aircraftConfigs;  
 

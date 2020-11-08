@@ -31,6 +31,7 @@ public class FlightRouteEntity implements Serializable {
     @Column(nullable = false)
     private String dest;
     
+    
     //@OneToOne(fetch = FetchType.LAZY)
     //private FlightRouteEntity destination;
     @OneToOne
